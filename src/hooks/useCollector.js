@@ -52,15 +52,14 @@ export function useCollector(collectionKey) {
     });
   };
 
-  const clearList = () => {
-    if(window.confirm('Atenção: Tem certeza que deseja limpar esta lista?')) {
+  const     clearList = () => {
+  
       setItems([]);
-    }
+    
   };
 
   const exportToJSON = (filename = 'coleta.json') => {
     if (items.length === 0) {
-      alert('A lista está vazia.');
       return;
     }
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(items, null, 2));
